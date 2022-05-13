@@ -1,0 +1,77 @@
+<div class="container news-section-container pt-5 pb-5">
+  <div class="row" *ngIf="businessNews$ | async as businessNews; else loading">
+    <div class="news-section-title-container d-flex">
+      <h2 class="title pe-3 pb-3">Business</h2>
+      <div style="width: 100%">
+        <hr />
+      </div>
+    </div>
+    <div *ngFor="let news of businessNews" class="col-3">
+      <div class="card news-card">
+        <img
+          [src]="news.image"
+          class="card-img-top"
+          alt="..."
+          style="height: 200px"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ news.type }}</h5>
+          <p class="card-text">{{ news.title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #loading> Loading... </ng-template>
+
+  <div
+    class="row mt-5"
+    *ngIf="techNews$ | async as techNews; else loading"
+  >
+    <div class="news-section-title-container d-flex">
+      <h2 class="title pe-3 pb-3">Tech</h2>
+      <div style="width: 100%">
+        <hr />
+      </div>
+    </div>
+    <div *ngFor="let news of techNews" class="col-3">
+      <div class="card news-card">
+        <img
+          [src]="news.image"
+          class="card-img-top"
+          alt="..."
+          style="height: 200px"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ news.type }}</h5>
+          <p class="card-text">{{ news.title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="row mt-5"
+    *ngIf="lifeNews$ | async as lifeNews; else loading"
+  >
+    <div class="news-section-title-container d-flex">
+      <h2 class="title pe-3 pb-3">Life</h2>
+      <div style="width: 100%">
+        <hr />
+      </div>
+    </div>
+    <div *ngFor="let news of lifeNews" class="col-3">
+      <div class="card news-card">
+        <img
+          [src]="news.image"
+          class="card-img-top"
+          alt="..."
+          style="height: 200px"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ news.type }}</h5>
+          <p class="card-text">{{ news.title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.news-section-container{
+  color: #ffffff;
+}
+
+.title {
+  color: #999!important;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.news-card {
+  background-color: #1200; border: none;box-shadow: -1px 15px 28px 8px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -1px 15px 28px 8px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 15px 28px 8px rgba(0,0,0,0.75);
+}
+
+.card-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: lighter;
+}
+
+.card-text {
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 20px;
+}

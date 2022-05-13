@@ -1,0 +1,37 @@
+<div class="container pt-5">
+  <div class="row" >
+
+    <div class="col-7" *ngIf="latestNews" >
+      <a href="" style="text-decoration: none">
+        <div  class="page-preview-image"
+             [ngStyle]="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.07) 0%, rgba(0, 0, 0, 0.8) 100%),url(' + latestNews[1].image + ')'}">
+          <div class="ms-5 mb-5">
+            <p  class="latest-news-type">
+              {{latestNews[1].type}}
+            </p>
+            <p>
+              <b class="latest-news-title">{{latestNews[1].title}}</b>
+            </p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+    <div class="col-5"  *ngIf="latestNews">
+      <a href="" style="text-decoration: none">
+        <div  class="page-preview-image"
+             [ngStyle]="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.07) 0%, rgba(0, 0, 0, 0.8) 100%),url(' + latestNews[0].image + ')'}">
+          <div class="ms-5 mb-5">
+            <p  class="latest-news-type">
+              {{latestNews[0].type}}
+            </p>
+            <p>
+              <b class="latest-news-title">{{latestNews[0].title}}</b>
+            </p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
