@@ -4,7 +4,7 @@ import { MainComponent } from './layout/main/main.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'news-dashboard',
     pathMatch: 'full',
   },
   {
@@ -13,8 +13,26 @@ export const routes: Routes = [
       import('./pages/auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: 'blog',
+    path: '',
     component: MainComponent,
-    children: [],
+    children: [
+      {
+        path: 'news-dashboard',
+        loadChildren: () =>
+          import('./pages/news-dashboard/news-dashboard.module').then(
+            (m) => m.NewsDashboardModule
+          ),
+      },
+      {
+        path: '**',
+        redirectTo: 'news-dashboard',
+        pathMatch: 'full',
+      },
+    ],
+  },
+  {
+    path: '**',
+    redirectTo: 'news-dashboard',
+    pathMatch: 'full',
   },
 ];
